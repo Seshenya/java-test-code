@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id "org.sonarqube" version "6.0.1.5171"
+}
 
 sourceCompatibility = 1.8
 
@@ -18,4 +21,12 @@ dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "Seshenya_java-test-code"
+        property "sonar.organization", "seshenya"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
