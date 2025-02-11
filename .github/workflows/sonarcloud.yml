@@ -37,5 +37,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           ./gradlew clean build --info
-          ./gradlew sonar --info
+          ./gradlew sonarqube --info
 
