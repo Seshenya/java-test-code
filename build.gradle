@@ -34,8 +34,8 @@ dependencies {
 
 tasks.withType(Test).configureEach {
     reports {
-        junitXml.required.set(true)
-        junitXml.outputLocation.set(layout.buildDirectory.dir("test-results")) // Corrected API usage
+        junitXml.required.set(false)
+        // junitXml.outputLocation.set(layout.buildDirectory.dir("test-results")) // Corrected API usage
     }
 }
 
