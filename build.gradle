@@ -32,6 +32,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'  // Updated JUnit version
 }
 
+tasks.withType(Test).configureEach {
+    reports.junitXml.outputLocation.set(file("$buildDir/test-results")) // Fix JUnit XML Report path issue
+}
+
 sonarqube {
     properties {
         property "sonar.projectKey", "Seshenya_java-test-code"
