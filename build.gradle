@@ -39,7 +39,7 @@ tasks.withType(Test).configureEach {
     }
 }
 
-sonarqube {
+sonar {
     properties {
         property "sonar.projectKey", "Seshenya_java-test-code"
         property "sonar.organization", "seshenya"
