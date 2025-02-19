@@ -32,6 +32,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run Tests with Coverage
         run: mvn clean test jacoco:report -B -Pcoverage
+      - name: Verify Coverage Report Exists
+        run: ls -l target/site/jacoco/
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
