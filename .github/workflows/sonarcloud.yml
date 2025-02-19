@@ -31,7 +31,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Run Tests with Coverage
-        run: mvn clean test jacoco:report -B -Pcoverage
+        run: mvn clean verify -Pcoverage
+      - name: Check Generated Files
+        run: ls -R target/site/
       - name: Verify Coverage Report Exists
         run: ls -l target/site/jacoco/
       - name: Build and analyze
